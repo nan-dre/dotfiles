@@ -156,8 +156,25 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" Deleting text actually deletes it, not storing it in a register
+nnoremap d "_d
+vnoremap d "_d
 "------------------------------------------------------------
+" vim-plug setup
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
+call plug#begin('~/.vim/plugged')
+
+" Latex plugin
+Plug 'lervag/vimtex'
+
+call plug#end()
+
+"-------------------------------------------------------------
 set clipboard=unnamedplus
 set backupdir=/tmp//
 set directory=/tmp//
