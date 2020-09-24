@@ -98,4 +98,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # ctf-tools: PATH setup
-export PATH=/home/andy/CTFs/ctf-tools/bin:/opt/ghidra_9.1.2_PUBLIC:/snap/bin:$PATH
+export PATH=/usr/share/texlive:/home/andy/CTFs/ctf-tools/bin:/opt/ghidra_9.1.2_PUBLIC:/snap/bin:$PATH
