@@ -1,3 +1,3 @@
 Some of my dotfiles.
-Just create symlinks to them
-```ln -sr ./.* ~/```
+### Installation
+Run the install.sh script, commenting out the configuration files you don't want.
