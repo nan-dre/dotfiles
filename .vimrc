@@ -178,20 +178,22 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 
 " Deoplete auto-complete
-if has('nvim')
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-        Plug 'Shougo/deoplete.nvim'
-          Plug 'roxma/nvim-yarp'
-            Plug 'roxma/vim-hug-neovim-rpc'
-        endif
-        let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"  else
+"        Plug 'Shougo/deoplete.nvim'
+"          Plug 'roxma/nvim-yarp'
+"            Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+"        let g:deoplete#enable_at_startup = 1
 
 "Nord theme
 Plug 'arcticicestudio/nord-vim'
 let g:nord_cursor_line_number_background = 1
 call plug#end()
-
+if (has("termguicolors"))
+  set termguicolors
+endif
 colorscheme nord
 "-------------------------------------------------------------
 set clipboard=unnamedplus
