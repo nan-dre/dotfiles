@@ -177,24 +177,17 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" Deoplete auto-complete
-" if has('nvim')
-"      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"  else
-"        Plug 'Shougo/deoplete.nvim'
-"          Plug 'roxma/nvim-yarp'
-"            Plug 'roxma/vim-hug-neovim-rpc'
-"endif
-"        let g:deoplete#enable_at_startup = 1
-
 "Nord theme
-Plug 'arcticicestudio/nord-vim'
-let g:nord_cursor_line_number_background = 1
+"Plug 'arcticicestudio/nord-vim'
+"let g:nord_cursor_line_number_background = 1
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
+
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme nord
+
+colorscheme dracula
 "-------------------------------------------------------------
 set clipboard=unnamedplus
 set backupdir=/tmp//
