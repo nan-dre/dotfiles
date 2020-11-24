@@ -1,0 +1,6 @@
+alias grep='grep --color=auto'
+alias gti='git'
+alias gigt='git'
+alias boot-cli='systemctl set-default multi-user.target'
+alias boot-gui='systemctl set-default graphical.target'
+alias go='xdg-open'
