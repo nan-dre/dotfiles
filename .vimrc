@@ -155,7 +155,8 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
+" Exiting insert mode
+inoremap jk <esc>
 " Deleting text actually deletes it, not storing it in a register
 nnoremap d "_d
 vnoremap d "_d
