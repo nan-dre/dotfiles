@@ -52,6 +52,7 @@ Plug 'dkarter/bullets.vim'
 Plug 'lervag/vimtex'
 Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-sneak'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 " Entertainment
 "Plug 'ryanss/vim-hackernews'
 
@@ -88,6 +89,11 @@ set relativenumber
 set number
 set title
 set clipboard+=unnamedplus
+if !isdirectory("/tmp/.nvim-undo-dir")
+    call mkdir("/tmp/.nvim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
 """ Plugin Configurations
 
 
@@ -186,8 +192,12 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+
+" nvim-gdb
+let g:nvimgdb_disable_start_keymaps = 1
 " Filetype-Specific Configurations
-autocmd FileType c noremap <F8> :w!<CR>:terminal gcc -g -Wall -o %:r %  && ./%:r<CR>
+autocmd FileType c noremap <F8> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
+autocmd FileType c noremap <F7> :w!<CR>:GdbStart gdb -q %:r<CR>
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
