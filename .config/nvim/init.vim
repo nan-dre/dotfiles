@@ -284,5 +284,5 @@ xnoremap <leader>d "_d
 nnoremap x "_x
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
-nmap <silent> <leader>e <Plug>(ale_previous_wrap)
-nmap <silent> <leader>E <Plug>(ale_next_wrap)
+nmap <silent> <leader>aj <Plug>(ale_previous_wrap)
+nmap <silent> <leader>ak <Plug>(ale_next_wrap)
