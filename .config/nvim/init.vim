@@ -1,4 +1,4 @@
-""" Optixal's Neovim Init.vim
+""" Forked from Optixal's Neovim Init.vim
 
 """ Vim-Plug
 call plug#begin()
@@ -86,7 +86,6 @@ set fillchars+=vert:\
 set wrap breakindent
 set encoding=utf-8
 set relativenumber
-set number
 set title
 set clipboard+=unnamedplus
 if !isdirectory("/tmp/.nvim-undo-dir")
@@ -187,7 +186,7 @@ let g:ale_linters = {
 nmap <leader>i :ALEFix<CR>
 
 " VimSneak
-autocmd ColorScheme * hi! link Sneak Normal
+hi! link Sneak Search
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
@@ -196,8 +195,6 @@ map T <Plug>Sneak_T
 " nvim-gdb
 let g:nvimgdb_disable_start_keymaps = 1
 " Filetype-Specific Configurations
-autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
-autocmd FileType c noremap <C-A-k> :w!<CR>:GdbStart gdb -q %:r<CR>
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -254,12 +251,6 @@ endfunction
 let mapleader="\\"
 nmap <leader>q :NERDTreeToggle<CR>
 nmap <leader>w :TagbarToggle<CR>
-" nmap <leader>ee :Colors<CR>
-" nmap <leader>ea :AirlineTheme 
-" nmap <leader>e1 :call ColorDracula()<CR>
-" nmap <leader>e2 :call ColorSeoul256()<CR>
-" nmap <leader>e3 :call ColorForgotten()<CR>
-" nmap <leader>e4 :call ColorZazen()<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
@@ -274,6 +265,8 @@ nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
+autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
+autocmd FileType c noremap <C-A-k> :w!<CR>:GdbStart gdb -q %:r<CR>
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
