@@ -196,8 +196,8 @@ map T <Plug>Sneak_T
 " nvim-gdb
 let g:nvimgdb_disable_start_keymaps = 1
 " Filetype-Specific Configurations
-autocmd FileType c noremap <F8> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
-autocmd FileType c noremap <F7> :w!<CR>:GdbStart gdb -q %:r<CR>
+autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
+autocmd FileType c noremap <C-A-k> :w!<CR>:GdbStart gdb -q %:r<CR>
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2

@@ -13,8 +13,8 @@ ln -sr ./.tmux.conf ~/
 # [ -f ~/.vimrc ] && echo "Found .vimrc, moving to backups." && mv ~/.vimrc ./backups/.vimrc_$DATE.bak
 # ln -sr ./.vimrc ~/
 
-[ -f ~/.config/nvim/init.vim ] && echo "Found init.vim, moving to backups." && mv ~/.config/nvim/init.vim ./backups/init.vim_$DATE.bak
-ln -sr .config/nvim/init.vim ~/.config/nvim/
+#[ -f ~/.config/nvim/init.vim ] && echo "Found init.vim, moving to backups." && mv ~/.config/nvim/init.vim ./backups/init.vim_$DATE.bak
+#ln -sr .config/nvim/init.vim ~/.config/nvim/
 
 # [ -f ~/.zshrc ] && echo "Found .zshrc, moving to backups." && mv ~/.zshrc ./backups/.zshrc_$DATE.bak
 # ln -sr ./.zshrc ~/
