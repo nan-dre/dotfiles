@@ -54,6 +54,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dispatch'
 Plug 'Raimondi/delimitMate'
+Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -208,6 +209,14 @@ map T <Plug>Sneak_T
 
 " nvim-gdb
 let g:nvimgdb_disable_start_keymaps = 1
+
+" vim-hardmode
+let g:hardtime_default_on = 1
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
+
 " Filetype-Specific Configurations
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -237,32 +246,10 @@ function! ColorDracula()
     IndentLinesEnable
 endfunction
 
-" Seoul256 Mode (Dark & Light)
-function! ColorSeoul256()
-    let g:airline_theme='silver'
-    color seoul256
-    IndentLinesDisable
-endfunction
-
-" Forgotten Mode (Light)
-function! ColorForgotten()
-    " Light airline themes: tomorrow, silver, alduin
-    " Light colors: forgotten-light, nemo-light
-    let g:airline_theme='tomorrow'
-    color forgotten-light
-    IndentLinesDisable
-endfunction
-
-" Zazen Mode (Black & White)
-function! ColorZazen()
-    let g:airline_theme='badcat'
-    color zazen
-    IndentLinesEnable
-endfunction
-
 """ Custom Mappings
 
 let mapleader="\\"
+nmap <space> <leader>
 nmap <leader>q :NERDTreeToggle<CR>
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
