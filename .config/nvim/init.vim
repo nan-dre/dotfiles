@@ -108,7 +108,7 @@ nnoremap <leader>gp :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>gps :Git push<CR>
+nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
 
 " NERDTree
@@ -215,7 +215,7 @@ let g:hardtime_default_on = 1
 let g:hardtime_ignore_quickfix = 1
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 2
+
 
 " Filetype-Specific Configurations
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
