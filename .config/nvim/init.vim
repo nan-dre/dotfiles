@@ -24,6 +24,7 @@ Plug 'rhysd/vim-color-spring-night'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
@@ -53,9 +54,8 @@ Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-sneak'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dispatch'
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
 Plug 'takac/vim-hardtime'
-
 call plug#end()
 
 """ Python3 VirtualEnv
@@ -79,13 +79,15 @@ highlight LineNr guibg=NONE ctermbg=NONE
 """ Other Configurations
 filetype plugin indent on
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set incsearch ignorecase smartcase hlsearch
+set incsearch ignorecase smartcase hlsearch showmatch
 set ruler laststatus=2 showcmd showmode
+set backspace=indent,eol,start
 set list listchars=trail:»,tab:»-
 set fillchars+=vert:\ 
 set wrap breakindent
 set encoding=utf-8
 set relativenumber
+set number
 set title
 set clipboard+=unnamedplus
 if !isdirectory("/tmp/.nvim-undo-dir")
@@ -215,6 +217,7 @@ let g:hardtime_default_on = 1
 let g:hardtime_ignore_quickfix = 1
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
 
 
 " Filetype-Specific Configurations
@@ -266,7 +269,7 @@ nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
+autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR>
 autocmd FileType c noremap <C-A-k> :w!<CR>:GdbStart gdb -q %:r<CR>
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
