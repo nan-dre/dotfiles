@@ -53,8 +53,9 @@ Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-sneak'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dispatch'
-Plug 'Raimondi/delimitMate'
-Plug 'takac/vim-hardtime'
+"Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
+"Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -79,13 +80,13 @@ highlight LineNr guibg=NONE ctermbg=NONE
 """ Other Configurations
 filetype plugin indent on
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set incsearch ignorecase smartcase hlsearch
+set incsearch ignorecase smartcase nohlsearch
 set ruler laststatus=2 showcmd showmode
 set list listchars=trail:»,tab:»-
 set fillchars+=vert:\ 
 set wrap breakindent
 set encoding=utf-8
-set relativenumber
+set relativenumber number
 set title
 set clipboard+=unnamedplus
 if !isdirectory("/tmp/.nvim-undo-dir")
@@ -201,7 +202,7 @@ let g:ale_linters = {
 nmap <leader>i :ALEFix<CR>
 
 " VimSneak
-hi! link Sneak Search
+hi! link Sneak Normal
 map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
@@ -211,10 +212,10 @@ map T <Plug>Sneak_T
 let g:nvimgdb_disable_start_keymaps = 1
 
 " vim-hardmode
-let g:hardtime_default_on = 1
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
-let g:hardtime_allow_different_key = 1
+"let g:hardtime_default_on = 1
+"let g:hardtime_ignore_quickfix = 1
+"let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+"let g:hardtime_allow_different_key = 1
 
 
 " Filetype-Specific Configurations
@@ -266,7 +267,7 @@ nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
-autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR><CR>
+autocmd FileType c noremap <C-A-j> :w!<CR>:!gcc -g3 -Wall -o %:r %<CR>
 autocmd FileType c noremap <C-A-k> :w!<CR>:GdbStart gdb -q %:r<CR>
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
