@@ -40,7 +40,7 @@ rm ~/.config/nvim/init.vim
 
 # Copy init.vim in current working directory to nvim's config location ...
 echo '[*] Linking init.vim -> ~/.config/nvim/init.vim'
-ln -sr ./.config/nvim/init.vim ~/.config/nvim/
+ln -sr ./init.vim ~/.config/nvim/
 
 echo -e "[+] Done, welcome to \033[1m\033[92mNeoVim\033[0m! Try it by running: nvim/vim. Want to customize it? Modify ~/.config/nvim/init.vim"
 
