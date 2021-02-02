@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
+colorscheme dracula
 """ Other Configurations
 filetype indent plugin on
 syntax on
