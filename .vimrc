@@ -27,6 +27,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 if !isdirectory("/tmp/.nvim-undo-dir")
     call mkdir("/tmp/.nvim-undo-dir", "", 0700)
 endif
