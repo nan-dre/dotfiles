@@ -55,13 +55,9 @@ Plug 'justinmk/vim-sneak'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dispatch'
 "Plug 'Raimondi/delimitMate'
-<<<<<<< HEAD
 Plug 'jiangmiao/auto-pairs'
 "Plug 'takac/vim-hardtime'
 
-=======
-Plug 'takac/vim-hardtime'
->>>>>>> manager_build
 call plug#end()
 
 """ Python3 VirtualEnv
@@ -85,23 +81,14 @@ highlight LineNr guibg=NONE ctermbg=NONE
 """ Other Configurations
 filetype plugin indent on
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-<<<<<<< HEAD
 set incsearch ignorecase smartcase nohlsearch
-=======
-set incsearch ignorecase smartcase hlsearch showmatch
->>>>>>> manager_build
 set ruler laststatus=2 showcmd showmode
 set backspace=indent,eol,start
 set list listchars=trail:»,tab:»-
 set fillchars+=vert:\ 
 set wrap breakindent
 set encoding=utf-8
-<<<<<<< HEAD
 set relativenumber number
-=======
-set relativenumber
-set number
->>>>>>> manager_build
 set title
 set clipboard+=unnamedplus
 if !isdirectory("/tmp/.nvim-undo-dir")
@@ -227,19 +214,10 @@ map T <Plug>Sneak_T
 let g:nvimgdb_disable_start_keymaps = 1
 
 " vim-hardmode
-<<<<<<< HEAD
 "let g:hardtime_default_on = 1
 "let g:hardtime_ignore_quickfix = 1
 "let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 "let g:hardtime_allow_different_key = 1
-=======
-let g:hardtime_default_on = 1
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
-let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 2
->>>>>>> manager_build
-
 
 " Filetype-Specific Configurations
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
