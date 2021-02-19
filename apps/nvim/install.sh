@@ -28,12 +28,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 echo "[*] Downloading patch font into ~/.local/share/fonts ..."
 curl -fLo ~/.fonts/Iosevka\ Term\ Nerd\ Font\ Complete.ttf --create-dirs https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Term%20Nerd%20Font%20Complete.ttf
 
-# (Optional) Alias vim -> nvim
-echo '[*] Aliasing vim -> nvim, remember to source ~/.bashrc ...'
-echo "alias vim='nvim'" >> ~/.bashrc
-
 # Enter Neovim and install plugins using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
-rm ~/.config/nvim/init.vim
+[ -f ~/.config/nvim/init.vim ] && rm ~/.config/nvim/init.vim
 echo -e '[*] Running :PlugInstall within nvim ...'
 sed '/call plug#end/q' init.vim > ~/.config/nvim/init.vim
 nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
