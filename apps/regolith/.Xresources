@@ -1,0 +1,139 @@
+*customization:	-color
+St.color0:	#1F2430
+St.color1:	#FF3333
+St.color10:	#BAE67E
+St.color11:	#FFE6B3
+St.color12:	#73D0FF
+St.color13:	#D4BFFF
+St.color14:	#5CCFE6
+St.color15:	#FFFFFF
+St.color2:	#A6CC70
+St.color3:	#FFD580
+St.color4:	#77A8D9
+St.color5:	#B48EAD
+St.color6:	#95E6CB
+St.color7:	#CBCCC6
+St.color8:	#BFBAB0
+St.color9:	#FF3333
+St.font:	JetBrains Mono:pixelsize=16:antialias=true:autohint=true
+Xcursor.size:	24
+Xcursor.theme:	Adwaita
+Xft.antialias:	1
+Xft.dpi:	96
+Xft.hinting:	1
+Xft.hintstyle:	hintslight
+Xft.rgba:	none
+gnome.gtk.theme:	Ayu-Mirage-Dark
+gnome.icon.theme:	Moka
+gnome.terminal.font:	JetBrains Mono 12
+gnome.terminal.scrollbar:	never
+gnome.wallpaper:	/usr/share/backgrounds/ESP_016895_1525_desktop.jpg
+gnome.wm.theme:	Ayu-Mirage-Dark
+i3-wm.bar.background.color:	#1F2430
+i3-wm.bar.font:	pango:JetBrains Mono Medium 13, Material Design Icons 13
+i3-wm.bar.position:	bottom
+i3-wm.bar.separator.color:	#77A8D9
+i3-wm.bar.statusline.color:	#E6E1CF
+i3-wm.bar.workspace.active.background.color:	#BFBAB0
+i3-wm.bar.workspace.active.border.color:	#BFBAB0
+i3-wm.bar.workspace.active.text.color:	#292B30
+i3-wm.bar.workspace.focused.background.color:	#FFA759
+i3-wm.bar.workspace.focused.border.color:	#FFA759
+i3-wm.bar.workspace.focused.text.color:	#1F2430
+i3-wm.bar.workspace.inactive.background.color:	#BFBAB0
+i3-wm.bar.workspace.inactive.border.color:	#BFBAB0
+i3-wm.bar.workspace.inactive.text.color:	#292B30
+i3-wm.bar.workspace.urgent.background.color:	#FF3333
+i3-wm.bar.workspace.urgent.border.color:	#FF3333
+i3-wm.bar.workspace.urgent.text.color:	#FFFFFF
+i3-wm.client.focused.color.background:	#BFBAB0
+i3-wm.client.focused.color.border:	#1F2430
+i3-wm.client.focused.color.child_border:	#BFBAB0
+i3-wm.client.focused.color.indicator:	#77A8D9
+i3-wm.client.focused.color.text:	#FFFFFF
+i3-wm.client.focused_inactive.color.background:	#292B30
+i3-wm.client.focused_inactive.color.border:	#1F2430
+i3-wm.client.focused_inactive.color.child_border:	#1F2430
+i3-wm.client.focused_inactive.color.indicator:	#292B30
+i3-wm.client.focused_inactive.color.text:	#E6E1CF
+i3-wm.client.unfocused.color.background:	#292B30
+i3-wm.client.unfocused.color.border:	#1F2430
+i3-wm.client.unfocused.color.child_border:	#1F2430
+i3-wm.client.unfocused.color.indicator:	#292B30
+i3-wm.client.unfocused.color.text:	#E6E1CF
+i3-wm.client.urgent.color.background:	#FF3333
+i3-wm.client.urgent.color.border:	#1F2430
+i3-wm.client.urgent.color.child_border:	#1F2430
+i3-wm.client.urgent.color.indicator:	#FF3333
+i3-wm.client.urgent.color.text:	#FFFFFF
+i3-wm.floatingwindow.border.size:	1
+i3-wm.font:	pango:JetBrains Mono Medium 13
+i3-wm.gaps.inner.size:	0
+i3-wm.gaps.outer.size:	0
+i3-wm.window.border.size:	2
+i3-wm.workspace.01.name:	1:<span font_desc='JetBrains Mono Medium 13'> 1 </span>
+i3-wm.workspace.02.name:	2:<span font_desc='JetBrains Mono Medium 13'> 2 </span>
+i3-wm.workspace.03.name:	3:<span font_desc='JetBrains Mono Medium 13'> 3 </span>
+i3-wm.workspace.04.name:	4:<span font_desc='JetBrains Mono Medium 13'> 4 </span>
+i3-wm.workspace.05.name:	5:<span font_desc='JetBrains Mono Medium 13'> 5 </span>
+i3-wm.workspace.06.name:	6:<span font_desc='JetBrains Mono Medium 13'> 6 </span>
+i3-wm.workspace.07.name:	7:<span font_desc='JetBrains Mono Medium 13'> 7 </span>
+i3-wm.workspace.08.name:	8:<span font_desc='JetBrains Mono Medium 13'> 8 </span>
+i3-wm.workspace.09.name:	9:<span font_desc='JetBrains Mono Medium 13'> 9 </span>
+i3-wm.workspace.10.name:	10:<span font_desc='JetBrains Mono Medium 13'> 10 </span>
+i3-wm.workspace.11.name:	11:<span font_desc='JetBrains Mono Medium 13'> 11 </span>
+i3-wm.workspace.12.name:	12:<span font_desc='JetBrains Mono Medium 13'> 12 </span>
+i3-wm.workspace.13.name:	13:<span font_desc='JetBrains Mono Medium 13'> 13 </span>
+i3-wm.workspace.14.name:	14:<span font_desc='JetBrains Mono Medium 13'> 14 </span>
+i3-wm.workspace.15.name:	15:<span font_desc='JetBrains Mono Medium 13'> 15 </span>
+i3-wm.workspace.16.name:	16:<span font_desc='JetBrains Mono Medium 13'> 16 </span>
+i3-wm.workspace.17.name:	17:<span font_desc='JetBrains Mono Medium 13'> 17 </span>
+i3-wm.workspace.18.name:	18:<span font_desc='JetBrains Mono Medium 13'> 18 </span>
+i3-wm.workspace.19.name:	19:<span font_desc='JetBrains Mono Medium 13'> 19 </span>
+i3xrocks.critical.color:	#FF3333
+i3xrocks.error.color:	#FFA759
+i3xrocks.label.battery0:	
+i3xrocks.label.battery100:	
+i3xrocks.label.battery20:	
+i3xrocks.label.battery50:	
+i3xrocks.label.battery80:	
+i3xrocks.label.batteryac:	
+i3xrocks.label.batterycharging:	
+i3xrocks.label.batteryunknown:	
+i3xrocks.label.capslock:	
+i3xrocks.label.color:	#E6E1CF
+i3xrocks.label.cpu:	
+i3xrocks.label.disk:	
+i3xrocks.label.dn:	
+i3xrocks.label.help:	
+i3xrocks.label.mediapaused:	
+i3xrocks.label.mediaplaying:	
+i3xrocks.label.memory:	
+i3xrocks.label.mute:	
+i3xrocks.label.next-workspace-widget:	
+i3xrocks.label.notify.error:	
+i3xrocks.label.notify.none:	
+i3xrocks.label.notify.some:	
+i3xrocks.label.numlock:	
+i3xrocks.label.off:	
+i3xrocks.label.on:	
+i3xrocks.label.sound:	
+i3xrocks.label.thermometer:	
+i3xrocks.label.time:	
+i3xrocks.label.up:	
+i3xrocks.label.wifi:	
+i3xrocks.label.wired:	
+i3xrocks.nominal:	#E6E1CF
+i3xrocks.value.color:	#E6E1CF
+i3xrocks.value.font:	JetBrains Mono Medium 13
+i3xrocks.value.mediaplayerwidth:	25
+i3xrocks.warning:	#FFD580
+i3xrocks.weather.error_message:	
+regolith.look:	lascaille
+rofi.drun-display-format:	{name}
+rofi.font:	JetBrains Mono Medium 16
+rofi.icon-theme:	Moka
+rofi.modi:	window,drun,run
+rofi.show-icons:	true
+rofi.theme:	/etc/regolith/styles/lascaille/rofi.rasi
+rofi.window-format:	\ {n} {t}
