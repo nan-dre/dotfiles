@@ -143,3 +143,4 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export BROWSER=/usr/bin/firefox
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export GOLFVIM=nvim
+export PATH="~/.emacs.d/bin:$PATH"
