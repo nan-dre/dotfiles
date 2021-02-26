@@ -502,8 +502,7 @@ mode "Resize Mode" {
 bindsym $mod+r mode "Resize Mode"
 
 # Make keys change
-bindsym Control+0 exec --no-startup-id "~/.config/regolith/i3/keys.sh"
-bindsym $mod+p exec --no-startup-id "passmenu"
+bindsym Control+0 exec --no-startup-id "/home/andy/.dotfiles/apps/other_scripts/at_boot.sh"
 
 ###############################################################################
 # i3 Appearance and Behavior
@@ -604,7 +603,7 @@ set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 13
 set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
 set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
 set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
-set_from_resource $i3-wm.bar.mode i3-wm.bar.mode dock
+set_from_resource $i3-wm.bar.mode i3-wm.bar.mode hide
 
 # i3xrocks config file. Override this for a custom status bar generator.
 set_from_resource $i3-wm.bar.status_command i3-wm.bar.status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
@@ -659,7 +658,7 @@ exec --no-startup-id $i3-wm.program.nm-applet
 # User programs from Xresources
 # To use, define an Xresource key i3-wm.program.[1-3] with the value of the program to launch.
 # See https://regolith-linux.org/docs/howto/override-xres/ for details.
-#exec --no-startup-id "~/.config/regolith/i3/keys.sh"
+exec --no-startup-id "/home/andy/.dotfiles/apps/other_scripts/at_boot.sh"
 set_from_resource $i3-wm.program.1 i3-wm.program.1 :
 exec --no-startup-id $i3-wm.program.1
 set_from_resource $i3-wm.program.2 i3-wm.program.2 :
