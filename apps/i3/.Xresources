@@ -72,7 +72,7 @@ URxvt.lineSpace:		0
 URxvt*saveline:			15000
 URxvt*termName:			rxvt-256color
 URxvt*iso14755:			false
-URxvt*urgentOnBell:		true
+URxvt*urgentOnBell:		false
 
 ! appearance
 URxvt*depth:			24

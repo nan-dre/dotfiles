@@ -32,11 +32,9 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
-# music control
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
+# change brightness
+bindsym XF86MonBrightnessUp exec light -A 5;
+bindsym XF86MonBrightnessDown exec light -U 5;
 
 # kill focused window
 bindsym $super+q kill
