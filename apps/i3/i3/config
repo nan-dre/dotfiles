@@ -13,19 +13,25 @@ exec --no-startup-id hsetroot -center ~/.wallpaper.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 exec --no-startup-id /home/andy/.dotfiles/apps/other_scripts/at_boot.sh
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id xmodmap ~/.dotfiles/apps/i3/.Xmodmap
 
+
+# No arrow keys
+# bindsym Alt_R+h exec --no-startup-id xdotool key --clearmodifiers Left
+# bindsym --release Alt_R+j exec --no-startup-id xdotool key --clearmodifiers Down
+# bindsym --release Alt_R+j exec --no-startup-id xdotool key Up
 # start a terminal
 bindsym $super+Return exec kitty
 
 # start dmenu (a program launcher)
-bindsym $super+space exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
-bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+bindsym $super+space exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=10'"
+# bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
 
 # common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
-# bindsym $super+l exec i3lock -i ~/.wallpaper.png
+# bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+bindsym $super+Shift+s exec flameshot gui
 bindsym $super+Shift+Return exec firefox
-bindsym $super+Shift+g exec geany
 
 #change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -36,9 +42,9 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86MonBrightnessUp exec light -A 5;
 bindsym XF86MonBrightnessDown exec light -U 5;
 
+
 # kill focused window
 bindsym $super+q kill
-bindsym $alt+F4 kill
 
 # change focus
 bindsym $super+h focus left
@@ -73,8 +79,8 @@ bindsym $super+Shift+f floating toggle
 bindsym $super+Shift+space focus mode_toggle
 
 # switch to workspace
-bindsym $alt+Control+Right workspace next
-bindsym $alt+Control+Left workspace prev
+bindsym $alt+Control+l workspace next
+bindsym $alt+Control+h workspace prev
 bindsym $super+1 workspace 1
 bindsym $super+2 workspace 2
 bindsym $super+3 workspace 3
@@ -92,6 +98,19 @@ bindsym $super+Shift+6 move container to workspace 6
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
+# bindsym $super+Shift+p exec --no-startup-id systemctl poweroff -i
+# bindsym $super+Shift+e exec --no-startup-id i3exit hibernate
+set $mode_system System (e) logout, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $super+p mode "$mode_system"
 
 # exit i3
 # bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
@@ -121,13 +140,14 @@ bar {
     }
     mode hide
     hidden_state hide
-    modifier Mod4
-        status_command i3status
+    modifier $super
+    status_command i3status
+    font pango:DejaVu Sans Mono 10
 }
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 2
-# assign [class=URxvt] 1
+for_window [class=".*"] border pixel 1
+# assign [class=kitty|emacs] 1
 # assign [class=Firefox|Transmission-gtk] 2
 # assign [class=Thunar|File-roller] 3
 # assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
