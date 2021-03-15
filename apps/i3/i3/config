@@ -9,12 +9,11 @@ font pango: Noto Sans 8
 floating_modifier $super
 
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 exec --no-startup-id /home/andy/.dotfiles/apps/other_scripts/at_boot.sh
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec --no-startup-id xmodmap ~/.dotfiles/apps/i3/.Xmodmap
+exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
+exec_always --no-startup-id xmodmap ~/.dotfiles/apps/i3/.Xmodmap
 
 
 # No arrow keys
@@ -32,6 +31,7 @@ bindsym $super+space exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size
 # bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
 bindsym $super+Shift+s exec flameshot gui
 bindsym $super+Shift+Return exec firefox
+bindsym $super+d exec emacs
 
 #change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -100,11 +100,12 @@ bindsym $super+Shift+6 move container to workspace 6
 bindsym $super+Shift+r restart
 # bindsym $super+Shift+p exec --no-startup-id systemctl poweroff -i
 # bindsym $super+Shift+e exec --no-startup-id i3exit hibernate
-set $mode_system System (e) logout, (r) reboot, (p) shutdown
+set $mode_system System (e) logout, (r) reboot, (p) shutdown, (s) sleep
 mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym s exec --no-startup-id i3lock & sleep 5 && xset dpms force off
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
