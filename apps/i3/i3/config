@@ -13,35 +13,23 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 exec --no-startup-id /home/andy/.dotfiles/apps/other_scripts/at_boot.sh
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
-exec_always --no-startup-id xmodmap ~/.dotfiles/apps/i3/.Xmodmap
+exec_always --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/apps/i3/.Xmodmap
 
-
-# No arrow keys
-# bindsym Alt_R+h exec --no-startup-id xdotool key --clearmodifiers Left
-# bindsym --release Alt_R+j exec --no-startup-id xdotool key --clearmodifiers Down
-# bindsym --release Alt_R+j exec --no-startup-id xdotool key Up
 # start a terminal
 bindsym $super+Return exec kitty
-
-# start dmenu (a program launcher)
 bindsym $super+space exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=10'"
-# bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
-
-# common apps keybinds
-# bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
 bindsym $super+Shift+s exec flameshot gui
 bindsym $super+Shift+Return exec firefox
 bindsym $super+d exec emacs
 
 #change volume
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec volume -n -N xosd up 1
+bindsym XF86AudioLowerVolume exec volume -n -N xosd down 1
+bindsym XF86AudioMute exec volume -n -N xosd mute
 
 # change brightness
 bindsym XF86MonBrightnessUp exec light -A 5;
 bindsym XF86MonBrightnessDown exec light -U 5;
-
 
 # kill focused window
 bindsym $super+q kill
@@ -87,6 +75,7 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1
@@ -95,11 +84,10 @@ bindsym $super+Shift+3 move container to workspace 3
 bindsym $super+Shift+4 move container to workspace 4
 bindsym $super+Shift+5 move container to workspace 5
 bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
-# bindsym $super+Shift+p exec --no-startup-id systemctl poweroff -i
-# bindsym $super+Shift+e exec --no-startup-id i3exit hibernate
 set $mode_system System (e) logout, (r) reboot, (p) shutdown, (s) sleep
 mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"

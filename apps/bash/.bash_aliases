@@ -6,3 +6,4 @@ alias boot-gui='systemctl set-default graphical.target'
 alias go='xdg-open'
 alias sl='ls'
 alias CAPS='xdotool key Caps_Lock'
+alias ssh="kitty +kitten ssh"

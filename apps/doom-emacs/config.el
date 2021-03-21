@@ -65,3 +65,11 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+(setenv "WORKON_HOME" "/home/andy/.local/share/miniconda3/envs/")
+(pyvenv-mode 1)
+;; (after! vterm
+;;   (set-popup-rule! "*doom:vterm-popup:main" :size 0.30 :vslot -4 :select t :quit nil :ttl 0 :side 'right)
+;;   )
+(global-undo-tree-mode)
+(setq undo-tree-auto-save-history t)
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
