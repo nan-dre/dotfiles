@@ -46,5 +46,5 @@ ssh-add -l > /dev/null || ssh-add ~/.ssh/id_gamma
 
 ## aliases
 source $HOME/.aliases
-
+source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
