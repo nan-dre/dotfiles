@@ -7,3 +7,19 @@ keysym u = u U Prior
 keysym a = a A Home
 keysym e = e E End
 keysym p = p P Next
+keycode  47 = semicolon colon adiaeresis Adiaeresis
+keycode  56 = b B ssharp U1E9E
+keycode  32 = o O odiaeresis Odiaeresis
+keycode  30 = u U udiaeresis Udiaeresis
+keycode  59 = comma less abreve Abreve
+keycode  28 = t T U021B U021A
+keycode  39 = s S U0219 U0218
+keycode  60 = period greater U00E2 U00C2
+keycode  31 = i I U00EE U00CE
+
+
+
+
+
+
+
