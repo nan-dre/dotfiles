@@ -136,8 +136,7 @@ bar {
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 1
-assign [class=emacs] 1
-assign [class=kitty] 2
+assign [class=Emacs] 1
 assign [class=Firefox] 3
 assign [class=discord] 4
 assign [class=Teams|libreoffice*] 5
@@ -145,7 +144,7 @@ for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucon
 for_window [class=kitty|Firefox|mpv] focus
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused              #bf616a #2f343f #d8dee8 #d8dee8 #d8dee8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
