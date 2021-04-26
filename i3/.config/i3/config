@@ -11,9 +11,9 @@ floating_modifier $super
 #autostart
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
-exec --no-startup-id /home/andy/.dotfiles/apps/other_scripts/at_boot.sh
+exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
-exec_always --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/apps/i3/.Xmodmap
+exec_always --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/i3/.Xmodmap
 
 # start a terminal
 bindsym $super+Return exec kitty
@@ -136,18 +136,15 @@ bar {
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 1
-# assign [class=kitty|emacs] 1
-# assign [class=Firefox|Transmission-gtk] 2
-# assign [class=Thunar|File-roller] 3
-# assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
-# assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
-# assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
+assign [class=Emacs] 1
+assign [class=Firefox] 3
+assign [class=discord] 4
+assign [class=Teams|libreoffice*] 5
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
-for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
-for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
+for_window [class=kitty|Firefox|mpv] focus
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused              #bf616a #2f343f #d8dee8 #d8dee8 #d8dee8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
