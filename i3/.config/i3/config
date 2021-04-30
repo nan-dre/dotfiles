@@ -13,7 +13,10 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
-exec_always --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/i3/.Xmodmap
+exec --no-startup-id xrandr --output DP-1 --primary --mode 1920x1080 --rate 144.0 --left-of DVI-D-1
+exec --no-startup-id source ~/.profile
+exec --no-startup-id source ~/.aliases
+exec --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/i3/.Xmodmap
 
 # start a terminal
 bindsym $super+Return exec kitty

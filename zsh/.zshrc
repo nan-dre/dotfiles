@@ -40,7 +40,7 @@ unset __conda_setup
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-  ssh-add ~/.ssh/id_gamma
+  ssh-add ~/.ssh/alfa
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
@@ -51,5 +51,5 @@ function go () {
 ## aliases
 source $HOME/.aliases
 source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 bindkey "^[[3~" delete-char
