@@ -10,25 +10,25 @@ general {
 
 order += "load"
 order += "cpu_temperature 0"
-# order += "disk /"
+order += "disk /"
 # order += "disk /home"
 # order += "ethernet enp1s0"
 # order += "wireless wlp2s0"
-order += "volume master"
-order += "battery 1"
+#order += "volume master"
+#order += "battery 1"
 order += "tztime local"
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'> %5min Load </span>"
 }
 
 cpu_temperature 0 {
-        format = "<span background='#bf616a'>  %degrees °C </span>"
+        format = "<span background='#bf616a'> %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#fec7cd'> / %free</span>"
 }
 
 disk "/home" {
@@ -67,6 +67,6 @@ battery 1 {
 
 tztime local {
 		format = "<span background='#81a1c1'> %time </span>"
-		format_time = " %a %-d %b %H:%M"
+		format_time = "%a %-d %b %H:%M"
 }
 

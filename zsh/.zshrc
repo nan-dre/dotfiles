@@ -6,6 +6,9 @@ setopt autocd extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 
+export EDITOR='vim'
+export VISUAL='vim'
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -35,6 +38,14 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
 
 ## ssh agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then

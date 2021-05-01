@@ -1,6 +1,7 @@
 # set modifier
 set $super Mod4
 set $alt Mod1
+set $volume ~/.local/share/i3-volume-3.5.0/volume
 
 # set font
 font pango: Noto Sans 8
@@ -9,26 +10,27 @@ font pango: Noto Sans 8
 floating_modifier $super
 
 #autostart
-exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -b
+#exec --no-startup-id xsettingsd &
+#exec --no-startup-id compton -b
+exec --no-startup-id xrandr --output DP-1 --primary --mode 1920x1080 --rate 144.0 --left-of DVI-D-1
 exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
-exec --no-startup-id xrandr --output DP-1 --primary --mode 1920x1080 --rate 144.0 --left-of DVI-D-1
 exec --no-startup-id source ~/.profile
 exec --no-startup-id source ~/.aliases
 exec --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/i3/.Xmodmap
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # start a terminal
 bindsym $super+Return exec kitty
 bindsym $super+space exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=10'"
-bindsym $super+Shift+s exec flameshot gui
+bindsym Print exec flameshot gui
 bindsym $super+Shift+Return exec firefox
 bindsym $super+d exec emacs
 
 #change volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id volume -n -N xosd up 1
-bindsym XF86AudioLowerVolume exec --no-startup-id volume -n -N xosd down 1
-bindsym XF86AudioMute exec --no-startup-id volume -n -N xosd mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volume -n -N xosd up 1
+bindsym XF86AudioLowerVolume exec --no-startup-id $volume -n -N xosd down 1
+bindsym XF86AudioMute exec --no-startup-id $volume -n -N xosd mute
 
 # change brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5;
@@ -145,6 +147,9 @@ assign [class=discord] 4
 assign [class=Teams|libreoffice*] 5
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 for_window [class=kitty|Firefox|mpv] focus
+workspace 1 output DP-1
+workspace 2 output DVI-D-1
+workspace "3: Firefox" output DVI-D-1
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #d8dee8 #d8dee8
