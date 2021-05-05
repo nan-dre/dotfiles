@@ -91,6 +91,10 @@ bindsym $super+Shift+5 move container to workspace 5
 bindsym $super+Shift+6 move container to workspace 6
 bindsym $super+Shift+7 move container to workspace 7
 
+#move workspace to another monitor
+bindsym $super+Ctrl+h move workspace to output left
+bindsym $super+Ctrl+l move workspace to output right
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
 set $mode_system System (e) logout, (r) reboot, (p) shutdown, (s) sleep
