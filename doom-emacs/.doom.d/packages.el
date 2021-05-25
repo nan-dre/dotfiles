@@ -12,6 +12,9 @@
 (package! evil-snipe)
 (package! pandoc-mode)
 (package! company-jedi)
+(when (featurep! :tools magit)
+  (package! magit-section)
+  (package! orgit :pin "e7cddf39e301c87c36c7de13e429dee74874d5c8"))
 
 
 ;; To install a package directly from a remote git repo, you must specify a
