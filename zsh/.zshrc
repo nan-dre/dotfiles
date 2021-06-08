@@ -32,9 +32,9 @@ if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
     if [ -f "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh"
+# . "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-        export PATH="/home/andy/.local/share/miniconda3/bin:$PATH"
+# export PATH="/home/andy/.local/share/miniconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
@@ -64,3 +64,19 @@ source $HOME/.aliases
 source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 bindkey "^[[3~" delete-char
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/andy/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/andy/.local/share/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
