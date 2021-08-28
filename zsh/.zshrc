@@ -56,7 +56,7 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 ## Detached xdg-open
-function go () {
+function go() {
   nohup xdg-open "$*" > /dev/null 2>&1 &
 }
 ## aliases

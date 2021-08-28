@@ -17,7 +17,7 @@ exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
 exec --no-startup-id source ~/.profile
 exec --no-startup-id source ~/.aliases
-exec --no-startup-id sleep 0.5; xmodmap ~/.dotfiles/i3/.Xmodmap
+exec --no-startup-id sleep 1; xmodmap ~/.dotfiles/i3/.Xmodmap
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # start a terminal
@@ -136,7 +136,7 @@ bar {
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
-    mode hide
+    mode dock
     hidden_state hide
     modifier $super
     status_command i3status
@@ -146,7 +146,7 @@ bar {
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 1
 assign [class=Emacs] 1
-assign [class=Firefox] 3
+assign [class=Firefox|mpv] 3
 assign [class=discord] 4
 assign [class=Teams|libreoffice*] 5
 for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
