@@ -1,4 +1,4 @@
-# Lines configured by zsh-newuser-install
+# Lines configured by zsh-newulfaser-install
 HISTFILE=~/.cache/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -48,7 +48,7 @@ function go() {
 }
 ## aliases
 source $HOME/.aliases
-/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 bindkey "^[[3~" delete-char
 
