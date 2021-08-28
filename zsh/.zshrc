@@ -26,19 +26,6 @@ _comp_options+=(globdots)		# Include hidden files.
 autoload -U colors && colors
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
 
-# Conda init
-__conda_setup="$('/home/andy/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-# . "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-    else
-# export PATH="/home/andy/.local/share/miniconda3/bin:$PATH"  # commented out by conda initialize
-    fi
-fi
-unset __conda_setup
-
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
@@ -61,7 +48,7 @@ function go() {
 }
 ## aliases
 source $HOME/.aliases
-source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 bindkey "^[[3~" delete-char
 

@@ -1,9 +1,4 @@
 """ Vim-Plug
-call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim', { 'as': 'dracula' }
-call plug#end()
-
-colorscheme dracula
 """ Other Configurations
 filetype indent plugin on
 syntax on
@@ -20,6 +15,7 @@ set ruler
 set laststatus=2
 set confirm
 set visualbell
+set t_vb=
 set cmdheight=2
 set relativenumber
 set notimeout ttimeout ttimeoutlen=200
