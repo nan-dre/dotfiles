@@ -128,7 +128,7 @@ bar {
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
-    mode hide
+    mode dock
     hidden_state hide
     modifier $super
     status_command i3status
