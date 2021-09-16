@@ -54,7 +54,6 @@ Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-sneak'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dispatch'
-Plug 'jiangmiao/auto-pairs'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 
