@@ -170,7 +170,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+q kill
 
 # exit-menu
-bindsym $mod+p exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+bindsym $mod+p exec ~/.config/i3/scripts/powermenu
 
 # Lock the system
 # lock with a picture:
