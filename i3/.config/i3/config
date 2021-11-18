@@ -226,7 +226,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+s layout tabbed
+bindsym $mod+t layout toggle tabbed split 
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -241,6 +241,9 @@ bindsym $mod+a focus parent
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace.sh
 
+#move workspace to different output
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+l move workspace to output right
 ## Multimedia Keys
 
 # volume
@@ -480,20 +483,12 @@ strip_workspace_numbers yes
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
-bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
-                
 bindsym $mod+space exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 30 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11" -terminal "/usr/bin/xfce4-terminal"
 
 ## rofi bindings for window menu (two bindings F10/$od+t)
 
-bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 4 \
-                -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
-
-bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
+bindsym $mod+s exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
