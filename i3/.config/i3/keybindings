@@ -1,13 +1,13 @@
 EndeavourOS i3wm Keybindings cheat sheet:
 
 --> to update this run the following command:
-wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/keybindings -P ~/.config/i3/
+wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/keybindings -P ~/.config/i3/
 
 All sources and updates are available at GitHub:
-https://github.com/endeavouros-team/i3-EndeavourOS
+https://github.com/endeavouros-team/endeavouros-i3wm-setup
 
 For reference consult our WIKI:
-https://endeavouros.com/docs/window-tiling-managers/i3-wm/
+https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
 
  = windows key
 
@@ -15,13 +15,13 @@ https://endeavouros.com/docs/window-tiling-managers/i3-wm/
 +Return 
 
 # kill focused window
-+c
++q
 
 # Application menu search by typing (fancy Rofi menu):
-F9 or +i
++d
 
-# Window switcher menu (fancy Rofu menu):
-F10 or +t
+# Window switcher menu (fancy Rofi menu):
++t
 
 # fancy exit-menu on bottom right:
 +Shift+e
@@ -100,4 +100,4 @@ F10 or +t
 ## App shortcuts
 +w starts Firefox
 +n starts Thunar
-Print Button screenshot
+ Button screenshot
