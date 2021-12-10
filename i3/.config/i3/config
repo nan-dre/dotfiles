@@ -326,6 +326,9 @@ for_window [class=kitty|Firefox|mpv] focus
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+#init gnome keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start
+
 # dex execute .desktop files
 # keep in mind that it can cause issues 
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
@@ -357,7 +360,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 #set powersavings for display:
-exec --no-startup-id xset s 480 dpms 600 600 600
+exec --no-startup-id xset s off -dpms
+
+#set key repeat rate
+exec --no-startup-id xset r rate 200 25
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
@@ -386,6 +392,7 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
+for_window [class="com-nandre-*"] floating enable
 
 ######################################
 # color settings for bar and windows #
