@@ -179,6 +179,9 @@ for_window [class=TelegramDesktop] focus
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+#init gnome keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start
+
 # dex execute .desktop files
 # keep in mind that it can cause issues
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
