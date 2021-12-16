@@ -143,7 +143,9 @@ bindsym $mod+XF86AudioLowerVolume exec pamixer -d 1 --allow-boost && dunstify -h
 bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+Return exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
-bindsym $mod+Shift+s exec flameshot gui
+bindsym Print exec "flameshot gui"
+bindsym $mod+r exec xfce4-terminal --command ranger
+bindsym $mod+c exec code
 
 ##########################################
 # configuration for workspace behaviour: #
