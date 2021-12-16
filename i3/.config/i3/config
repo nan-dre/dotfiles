@@ -281,6 +281,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+Return exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
 bindsym Print exec "flameshot gui"
+bindsym $mod+r exec xfce4-terminal --command ranger
+bindsym $mod+c exec code
 
 ##########################################
 # configuration for workspace behaviour: #
