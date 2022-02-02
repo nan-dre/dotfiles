@@ -37,3 +37,4 @@ xnoremap <leader>d "_d
 nnoremap x "_x
 nmap <C-w>% :below new<CR>
 nmap <C-w>" :below vnew<CR>
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
