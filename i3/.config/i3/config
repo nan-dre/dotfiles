@@ -109,8 +109,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 #split in horizontal orientation
-
 bindsym $mod+e split h
+
 # split in vertical orientation
 bindsym $mod+v split v
 
@@ -118,7 +118,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+t layout toggle tabbed splith splitv
+bindsym $mod+t layout toggle tabbed splith
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
