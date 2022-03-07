@@ -17,7 +17,7 @@ set confirm
 set visualbell
 set t_vb=
 set cmdheight=2
-set relativenumber
+set number
 set notimeout ttimeout ttimeoutlen=200
 set shiftwidth=4
 set softtabstop=4
