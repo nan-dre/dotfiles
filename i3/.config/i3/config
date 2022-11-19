@@ -187,6 +187,9 @@ bindsym $mod+Shift+r restart
 # keybinding list in editor:
 bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
+bindsym XF86TouchpadOn exec xdotool click 1
+bindsym XF86TouchpadOff exec xdotool click 3
+
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
@@ -313,7 +316,6 @@ workspace $ws2 output DVI-D-0
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
 for_window [class=kitty|Firefox|mpv] focus
 #for_window [class=Thunderbird] focus
 #for_window [class=TelegramDesktop] focus
@@ -362,7 +364,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec --no-startup-id xset s off -dpms
 
 #set key repeat rate
-exec --no-startup-id xset r rate 200 25
+exec --no-startup-id xset r rate 300 25
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
@@ -372,6 +374,7 @@ exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id source ~/.profile
 exec --no-startup-id source ~/.aliases
 exec --no-startup-id sleep 1; xmodmap ~/.dotfiles/i3/.Xmodmap
+exec --no-startup-id xinput set-prop "pointer:Razer Razer Basilisk X HyperSpeed" "libinput Accel Speed" -1
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal

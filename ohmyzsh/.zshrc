@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo zsh-syntax-highlighting last-working-dir)
+plugins=(sudo zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,9 @@ source $ZSH/oh-my-zsh.sh
 function open() {
   nohup xdg-open "$*" > /dev/null 2>&1 &
 }
+
+export NLTK_DATA="$HOME/.local/share/nltk_data"
+export TERMINAL="xfce4-terminal"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
