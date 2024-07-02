@@ -5,17 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/andy/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZOXIDE_CMD_OVERRIDE="cd"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,30 +115,34 @@ function open() {
   nohup xdg-open "$*" > /dev/null 2>&1 &
 }
 
-export NLTK_DATA="$HOME/.local/share/nltk_data"
+## ssh agent
+#if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#  eval `ssh-agent`
+#  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+#  ssh-add ~/.ssh/id_ed25519
+#fi
+#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
 export TERMINAL="xfce4-terminal"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH="/home/andy/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/andy/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/andy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/andy/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/andy/perl5"; export PERL_MM_OPT;
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/andy/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda/etc/profile.d/conda.sh"
+    if [ -f "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/andy/.local/share/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/anaconda/bin:$PATH"
+        export PATH="/home/andy/.local/share/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export CUDA_HOME=/usr/local/cuda-11.7
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+export HF_HOME=/mnt/s/huggingface
