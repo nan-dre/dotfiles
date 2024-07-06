@@ -90,7 +90,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec ~/.config/i3/scripts/keyhint-2
+#bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
@@ -101,6 +101,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+# move workspace
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+l move workspace to output right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -201,10 +205,13 @@ exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3
 exec --no-startup-id blueman-tray
 
 # transparency
-exec --no-startup-id picom -CGb --experimental-backend
+exec --no-startup-id picom -CGb
 
 # networkmanager-applet
 exec --no-startup-id nm-applet
+
+# set screenlayout
+exec --no-startup-id ~/.screenlayout/default.sh
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
@@ -220,6 +227,10 @@ exec --no-startup-id /home/andy/.dotfiles/other_scripts/at_boot.sh
 exec --no-startup-id source ~/.profile
 exec --no-startup-id source ~/.aliases
 exec --no-startup-id sleep 1; xmodmap ~/.dotfiles/i3/.Xmodmap
+
+# Set touchpad pointer speed
+exec --no-startup-id xinput --set-prop 'MSFT0004:00 06CB:CD98 Touchpad' 'libinput Accel Speed' 0.4
+
 
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
